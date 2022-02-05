@@ -1,7 +1,7 @@
 readMore:
   other: Читать далее
 readingTime:
-  other: '{{ .Count }} мин. чтения'
+  other: '{{ .ReadingTime }} мин. чтения'
 toc:
   other: Содержание
 seriesOfPosts:

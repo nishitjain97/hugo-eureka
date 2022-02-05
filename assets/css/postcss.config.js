@@ -9,8 +9,5 @@ module.exports = {
         require('autoprefixer')({
             path: [themeDir]
         }),
-        require('cssnano')({
-            preset: 'default',
-        }),
     ]
 }

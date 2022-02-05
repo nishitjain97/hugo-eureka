@@ -2,11 +2,7 @@
   <a href="{{ .Permalink }}" class="font-bold text-xl hover:text-eureka">{{ .LinkTitle }}</a>
 </div>
 <div class="content">
-  {{ if .Description }}
-    {{ .Description | plainify | htmlUnescape }}
-  {{ else if .Summary }}
-    {{ .Summary | plainify | htmlUnescape }}
-  {{ end }}
+  {{ .Summary | plainify | htmlUnescape }}
 </div>
 {{ if eq .Type "docs" }}
 <div class="px-6 pt-4">
@@ -19,17 +15,13 @@
           <a href="{{ .Permalink }}" class="font-semibold hover:text-eureka">{{ .LinkTitle }}</a>
       </div>
       <div class="">
-        {{ if .Description }}
-          {{ .Description | plainify | htmlUnescape }}
-        {{ else if .Summary }}
-          {{ .Summary | plainify | htmlUnescape }}
-        {{ end }}
+          {{- .Summary | plainify | htmlUnescape -}}
       </div>
   </div>
   {{ end }}
   <div class="pt-6 hover:text-eureka">
       <a href="{{ .Permalink }}" class="font-semibold">{{ i18n "readMore" }}</a>
-      <i class='fas {{ cond (eq .Site.Language.LanguageDirection "rtl") "fa-caret-left" "fa-caret-right" }} ms-1'></i>
+      <i class="fas fa-caret-right ml-1"></i>
   </div>
 </div>
 {{ else }}
